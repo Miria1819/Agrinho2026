@@ -1,0 +1,129 @@
+:root {
+    --verde-escuro: #2d5a27;
+    --verde-claro: #7fb069;
+    --marrom-terra: #5d4037;
+    --marrom-claro: #8d6e63;
+    --bege: #f5f5dc;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--bege);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Painel Inicial */
+header {
+    background: linear-gradient(135deg, var(--verde-escuro), var(--marrom-terra));
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.animal-anim {
+    position: absolute;
+    font-size: 2rem;
+    animation: move 10s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes move {
+    0% { left: -50px; transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { left: 100%; transform: translateY(0); }
+}
+
+/* Tabela de Grãos */
+section { 
+    padding: 20px; 
+    max-width: 900px; 
+    margin: auto; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+th { 
+    background-color: var(--verde-escuro); 
+    color: white; 
+    padding: 12px; 
+}
+
+td { 
+    border: 1px solid #ddd; 
+    padding: 10px; 
+    text-align: center; 
+}
+
+tr:nth-child(even) { 
+    background-color: #f2f2f2; 
+}
+
+/* Jogo de Arrastar */
+#game-container {
+    display: none;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 3px solid var(--marrom-claro);
+}
+
+.items-area { 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    margin-bottom: 30px; 
+    min-height: 80px; 
+}
+
+.draggable {
+    padding: 10px 15px;
+    background: #eee;
+    border: 1px solid #999;
+    cursor: grab;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.bins-area { 
+    display: flex; 
+    justify-content: space-around; 
+    gap: 10px; 
+}
+
+.bin {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.bin.verde { background-color: #2e7d32; border: 4px inset #1b5e20; }
+.bin.vermelha { background-color: #c62828; border: 4px inset #b71c1c; }
+.bin.marrom { background-color: #4e342e; border: 4px inset #3e2723; }
+
+button#btn-jogar {
+    background-color: var(--verde-escuro);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}

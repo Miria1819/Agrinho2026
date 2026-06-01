@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="animal-anim" style="top: 10%; animation-duration: 15s;">🐄</div>
+    <div class="animal-anim" style="top: 50%; animation-duration: 12s; animation-delay: 2s;">🐓</div>
+    <div class="animal-anim" style="top: 80%; animation-duration: 18s; animation-delay: 5s;">🐑</div>
+    
+    <h1>Agro Forte, Futuro Sustentável</h1>
+    <p>Equilíbrio entre produção e meio ambiente</p>
+</header>
+
+<section>
+    <h2>Ciclo de Vida dos Grãos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome do Grão</th>
+                <th>Tempo de Produção (Médio)</th>
+                <th>Melhor Estação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Soja</td>
+                <td>100 - 160 dias</td>
+                <td>Primavera</td>
+            </tr>
+            <tr>
+                <td>Milho</td>
+                <td>120 - 150 dias</td>
+                <td>Verão / Outono (Safrinha)</td>
+            </tr>
+            <tr>
+                <td>Trigo</td>
+                <td>110 - 150 dias</td>
+                <td>Inverno</td>
+            </tr>
+            <tr>
+                <td>Feijão</td>
+                <td>70 - 90 dias</td>
+                <td>Primavera / Verão</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="btn-jogar" onclick="iniciarJogo()">Jogar: Separador Sustentável</button>
+
+    <div id="game-container">
+        <h3>Arraste cada item para sua caixa correta!</h3>
+        <div class="items-area" id="items-area">
+            <div class="draggable" draggable="true" id="item1" data-type="verdura">Alface</div>
+            <div class="draggable" draggable="true" id="item2" data-type="legume">Abóbora</div>
+            <div class="draggable" draggable="true" id="item3" data-type="esterco">Adubo Orgânico</div>
+            <div class="draggable" draggable="true" id="item4" data-type="verdura">Rúcula</div>
+            <div class="draggable" draggable="true" id="item5" data-type="legume">Cenoura</div>
+        </div>
+
+        <div class="bins-area">
+            <div class="bin verde" id="bin-verdura" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>Verdura</strong>
+            </div>
+            <div class="bin vermelha" id="bin-legume" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>Legumes</strong>
+            </div>
+            <div class="bin marrom" id="bin-esterco" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>Esterco</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
